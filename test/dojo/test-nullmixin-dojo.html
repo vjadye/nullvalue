@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>QUnit basic example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+    
+    <!-- Configure Dojo first -->
+    <script>
+        dojoConfig = {
+            has: {
+            "dojo-firebug": true,
+            "dojo-debug-messages": true
+            },
+            
+            packages: [
+                {
+                    name : "dojo",
+                    location : "./"
+                },
+                {
+                    name: "nullmixin",
+                    location: "/../../../src/dojo",
+                    main: "nullmixin-dojo"
+                }, 
+                
+                {
+                    name: "valuemixin",
+                    location: "/../../../src/dojo",
+                    main: "valuemixin-dojo"
+                } 
+             ], // Timeout after 10 seconds
+            
+            waitSeconds: 10
+            ,
+            // Get "fresh" resources
+            cacheBust: true
+        };
+    </script>
+
+    <!-- Load Dojo, Dijit, and DojoX resources from Google CDN -->
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7/dojo/dojo.js"></script>
+    
+    <script src="nullmixin-dojo-test.js"></script>
+</body>
+
+</html>
